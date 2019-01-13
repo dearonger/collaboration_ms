@@ -1,0 +1,36 @@
+let menu = [
+    {
+        index:'create',
+        name:'订单录入',
+        icon:'edit'
+    },{
+        index:'check',
+        name:'订单审核',
+        icon:'solution'
+    },{
+        index:'search',
+        name:'订单查询',
+        icon:'search'
+    },{
+        index:'show',
+        name:'进度展示',
+        icon:'bars'
+    },{
+        index:'purchase',
+        name:'原料配置',
+        icon:'gold'
+    },{
+        index:'production',
+        name:'订单生产',
+        icon:'redo'
+    },{
+        index:'transport',
+        name:'产品运输',
+        icon:'shopping-cart'
+    },{
+        index:'question',
+        name:'问题反馈',
+        icon:'question-circle'
+    }
+]
+export default menu;

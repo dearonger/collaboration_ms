@@ -4,10 +4,11 @@ import { Layout, Menu } from 'antd';
 import MainMenu from '../../components/MainMenu/MainMenu';
 import style from './Main.less';
 
-  const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 class Main extends React.Component {
     render(){
+      const {children} = this.props;
         return (
             <Layout>
             <Header className="header">
@@ -31,7 +32,7 @@ class Main extends React.Component {
                   background: '#fff', padding: 16, margin: 0, minHeight: 870,
                 }}
                 >
-                  Content
+                  {children}
                 </Content>
               </Layout>
             </Layout>
