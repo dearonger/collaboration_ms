@@ -1,7 +1,8 @@
 import React from 'react';
-import LoginForm from '../../components/LoginForm/LoginForm';
-import style from './Login.less';
 import { Layout } from 'antd';
+
+import LoginForm from '../LoginForm/LoginForm';
+import style from './Login.less';
 
 const { Header, Footer, Content } = Layout;
 

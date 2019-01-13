@@ -76,49 +76,49 @@ class Create extends React.Component {
     };
     
     return (
-        <Form onSubmit={this.handleSubmit} className={sytle.formstyle}>
+      <Form onSubmit={this.handleSubmit} className={sytle.formstyle}>
         <Row gutter={16}>
           <Col className="gutter-row" span={6}>
-          <Form.Item
-          label="订单号"
-          {...formItemLayout}
-          >
-          {getFieldDecorator('order_id', {
-            rules: [{
-              required: true, message: '请输入订单号!',
-            }],
-          })(
-            <Input />
-          )}
-        </Form.Item>
+            <Form.Item
+            label="订单号"
+            {...formItemLayout}
+            >
+            {getFieldDecorator('order_id', {
+              rules: [{
+                required: true, message: '请输入订单号!',
+              }],
+            })(
+              <Input />
+            )}
+            </Form.Item>
           </Col>
           <Col className="gutter-row" span={6}>
-          <Form.Item
-          label="订单号"
-          {...formItemLayout}
-          >
-          {getFieldDecorator('order_name', {
-            rules: [{
-              required: true, message: '请输入订单号!',
-            }],
-          })(
-            <Input />
-          )}
-        </Form.Item>
+            <Form.Item
+            label="订单号"
+            {...formItemLayout}
+            >
+            {getFieldDecorator('order_name', {
+              rules: [{
+                required: true, message: '请输入订单号!',
+              }],
+            })(
+              <Input />
+            )}
+            </Form.Item>
           </Col>
           <Col className="gutter-row" span={6}>
-          <Form.Item
-          label="签订日期"
-          {...formItemLayout}
-          >
-          {getFieldDecorator('order_date', {
-            rules: [{
-              required: true, message: '请输入签订日期!',
-            }],
-          })(
-            <DatePicker placeholder="请选择签订时间" style={{ width: '100%' }} />
-          )}
-        </Form.Item>
+            <Form.Item
+            label="签订日期"
+            {...formItemLayout}
+            >
+            {getFieldDecorator('order_date', {
+              rules: [{
+                required: true, message: '请输入签订日期!',
+              }],
+            })(
+              <DatePicker placeholder="请选择签订时间" style={{ width: '100%' }} />
+            )}
+            </Form.Item>
           </Col>
           <Col className="gutter-row" span={6}>
             <div className="gutter-box">col-6</div>
@@ -126,14 +126,12 @@ class Create extends React.Component {
         </Row>
         <Row gutter={16}>
           <Col span={6}>
-          <Form.Item
-           {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">提交</Button>
-        </Form.Item>
+            <Form.Item {...tailFormItemLayout}>
+              <Button type="primary" htmlType="submit">提交</Button>
+            </Form.Item>
           </Col>
         </Row>
-        
-        </Form>
+      </Form>
     );
   }
 }
