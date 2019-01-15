@@ -4,7 +4,7 @@ let menu = [
         name:'订单录入',
         icon:'edit'
     },{
-        index:'check',
+        index:'audit',
         name:'订单审核',
         icon:'solution'
     },{

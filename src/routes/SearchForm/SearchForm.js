@@ -1,5 +1,7 @@
 import React from 'react';
-import { Form, Row, Col, Input, Button, DatePicker } from 'antd';
+import { Form, Row, Col, Input, Button, DatePicker, } from 'antd';
+
+import style from './SearchForm.less';
 
 class Search extends React.Component {
   handleSearch = (e) => {
@@ -27,26 +29,26 @@ class Search extends React.Component {
     };
 
     return (
-      <Form className="ant-advanced-search-form" onSubmit={this.handleSearch}>
+      <Form className={style.formStyle} onSubmit={this.handleSearch}>
         <Row gutter={24}>
-          <Col span={8} key="order_id">
+          <Col span={6} key="order_id">
             <Form.Item label="订单编号" {...formItemLayout}>
               {getFieldDecorator('order_id', {
                 rules: [
                   {
-                    required: true,
+                    required: false,
                     message: '请输入订单编号',
                   },
                 ],
               })(<Input placeholder="订单编号" />)}
             </Form.Item>
           </Col>
-          <Col span={8} key="order_date">
+          <Col span={6} key="sign_date">
             <Form.Item label="签订日期" {...formItemLayout}>
-              {getFieldDecorator('order_date', {
+              {getFieldDecorator('sign_date', {
                 rules: [
                   {
-                    required: true,
+                    required: false,
                     message: '请输入签订日期!',
                   },
                 ],
@@ -58,29 +60,30 @@ class Search extends React.Component {
               )}
             </Form.Item>
           </Col>
-          <Col span={8} key="order_creater">
+          <Col span={6} key="specimen">
             <Form.Item label="业务员姓名" {...formItemLayout}>
-              {getFieldDecorator('order_creater', {
+              {getFieldDecorator('specimen', {
                 rules: [
                   {
-                    required: true,
+                    required: false,
                     message: '请输入业务员',
                   },
                 ],
               })(<Input placeholder="业务员姓名" />)}
             </Form.Item>
           </Col>
-        </Row>
-        <Row>
-          <Col span={24} style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">
-              查找
-            </Button>
-            <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
-              清空
-            </Button>
+          <Col span={6}>
+            <Form.Item>
+              <Button className={style.submitButton} type="primary" htmlType="submit">
+                查找
+              </Button>
+              <Button className={style.submitButton} onClick={this.handleReset}>
+                清空
+              </Button>
+            </Form.Item>
           </Col>
         </Row>
+        <div className={style.searchContent}>暂无相关数据</div>
       </Form>
     );
   }
