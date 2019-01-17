@@ -21,6 +21,15 @@ class Transportstep extends React.Component {
     };
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  }
+
   next() {
     const current = this.state.current + 1;
     this.setState({ current });
@@ -55,7 +64,7 @@ class Transportstep extends React.Component {
       },
     };
     return (
-      <div className={style.steps1Content}>
+      <div className={style.stepsContent}>
         <Row gutter={24}>
           <Col span={8} key='order_id'>
             <Form.Item label='订单编号' {...formItemLayout}>
@@ -118,7 +127,7 @@ class Transportstep extends React.Component {
       },
     };
     return (
-      <div className={style.steps1Content}>
+      <div className={style.stepsContent}>
         <Row gutter={24}>
           <Col span={8} key='order_id'>
             <Form.Item label='订单编号' {...formItemLayout}>
@@ -181,7 +190,7 @@ class Transportstep extends React.Component {
       },
     };
     return (
-      <div className={style.steps1Content}>
+      <div className={style.stepsContent}>
         <Row gutter={24}>
           <Col span={8} key='order_id'>
             <Form.Item label='订单编号' {...formItemLayout}>
@@ -234,7 +243,7 @@ class Transportstep extends React.Component {
   render() {
     const { current } = this.state;
     return (
-      <Form>
+      <Form className={style.formStyle}>
         <Steps current={current}>
           {steps.map(item => <Step key={item.title} title={item.title} />)}
         </Steps>
@@ -242,17 +251,17 @@ class Transportstep extends React.Component {
         <div className={style.stepsAction}>
           {
             current < steps.length - 1
-            && <Button type="primary" onClick={() => this.next()}>Next</Button>
+            && <Button type="primary" onClick={() => this.next()}>下一步</Button>
           }
           {
             current === steps.length - 1
-            && <Button type="primary" onClick={() => message.success('Processing complete!')}>Done</Button>
+            && <Button type="primary" onClick={() => message.success('Processing complete!')}>完成</Button>
           }
           {
             current > 0
             && (
               <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
-                Previous
+                上一步
               </Button>
             )
           }
