@@ -1,5 +1,5 @@
 import React from 'react';
-import { Steps, Button, message, Form, Row, Col, Input, DatePicker, } from 'antd';
+import { Steps, Button, message, Form, Row, Col, Input, DatePicker, List } from 'antd';
 
 import style from './ProductionStep.less';
 
@@ -13,6 +13,14 @@ const steps = [{
   title: '质量检测',
 }];
 
+const listData = [
+  'Racing car sprays burning fuel into crowd.',
+  'Japanese princess to wed commoner.',
+  'Australian walks 100km after outback crash.',
+  'Man charged over missing wedding girl.',
+  'Los Angeles battles huge wildfires.',
+];
+
 class Productionstep extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +28,7 @@ class Productionstep extends React.Component {
       current: 0,
     };
   }
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
@@ -66,7 +74,7 @@ class Productionstep extends React.Component {
     return (
       <div className={style.stepsContent}>
         <Row gutter={24}>
-          <Col span={8} key='order_id'>
+          <Col span={12} key='order_id'>
             <Form.Item label='订单编号' {...formItemLayout}>
               {getFieldDecorator('order_id', {
                 rules: [{
@@ -78,34 +86,9 @@ class Productionstep extends React.Component {
               )}
             </Form.Item>
           </Col>
-          <Col span={8} key='order_date'>
-            <Form.Item label='签订日期' {...formItemLayout}>
-              {getFieldDecorator('order_date', {
-                rules: [{
-                  required: true, message: '请输入签订日期!',
-                }],
-              })(
-                <DatePicker placeholder="请选择签订时间" style={{ width: '100%' }} />
-              )}
-            </Form.Item>
-          </Col>
-          <Col span={8} key='order_creater'>
-            <Form.Item label='业务员姓名' {...formItemLayout}>
-              {getFieldDecorator('order_creater', {
-                rules: [{
-                  required: true,
-                  message: '请输入业务员',
-                }],
-              })(
-                <Input placeholder="业务员姓名" />
-              )}
-            </Form.Item>
-          </Col>
-        </Row>
-        <Row>
-          <Col span={24} style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">查找</Button>
-            <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
+          <Col span={8} style={{ textAlign: 'right' }}>
+            <Button type="primary" htmlType="submit" className={style.submitButton} onClick={this.handleSubmit} >查找</Button>
+            <Button className={style.submitButton} onClick={this.handleReset}>
               清空
               </Button>
           </Col>
@@ -129,48 +112,29 @@ class Productionstep extends React.Component {
     return (
       <div className={style.stepsContent}>
         <Row gutter={24}>
-          <Col span={8} key='order_id'>
-            <Form.Item label='订单编号' {...formItemLayout}>
-              {getFieldDecorator('order_id', {
-                rules: [{
-                  required: true,
-                  message: '请输入订单编号',
-                }],
-              })(
-                <Input placeholder="订单编号" />
-              )}
+          <Col span={10} key='finish_date'>
+            <Form.Item label='预计完成时间' {...formItemLayout}>
+              <lable>2019-02-13</lable>
             </Form.Item>
           </Col>
-          <Col span={8} key='order_date'>
-            <Form.Item label='签订日期' {...formItemLayout}>
-              {getFieldDecorator('order_date', {
+          <Col span={10} key='finished_date'>
+            <Form.Item label='实际完成时间' {...formItemLayout}>
+              {getFieldDecorator('finished_date', {
                 rules: [{
-                  required: true, message: '请输入签订日期!',
+                  required: true, message: '请输入实际完成日期!',
                 }],
               })(
-                <DatePicker placeholder="请选择签订时间" style={{ width: '100%' }} />
-              )}
-            </Form.Item>
-          </Col>
-          <Col span={8} key='order_creater'>
-            <Form.Item label='业务员姓名' {...formItemLayout}>
-              {getFieldDecorator('order_creater', {
-                rules: [{
-                  required: true,
-                  message: '请输入业务员',
-                }],
-              })(
-                <Input placeholder="业务员姓名" />
+                <DatePicker placeholder="请选择实际完成时间" style={{ width: '100%' }} />
               )}
             </Form.Item>
           </Col>
         </Row>
         <Row>
-          <Col span={24} style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">查找</Button>
+          <Col span={20} style={{ textAlign: 'right' }}>
+            <Button type="primary" htmlType="submit" onClick={this.handleSubmit}>提交</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
               清空
-              </Button>
+            </Button>
           </Col>
         </Row>
       </div>
@@ -204,36 +168,46 @@ class Productionstep extends React.Component {
               )}
             </Form.Item>
           </Col>
-          <Col span={8} key='order_date'>
-            <Form.Item label='签订日期' {...formItemLayout}>
-              {getFieldDecorator('order_date', {
+          <Col span={8} key='check_date'>
+            <Form.Item label='质检日期' {...formItemLayout}>
+              {getFieldDecorator('check_date', {
                 rules: [{
-                  required: true, message: '请输入签订日期!',
+                  required: true, message: '请输入质检日期!',
                 }],
               })(
-                <DatePicker placeholder="请选择签订时间" style={{ width: '100%' }} />
+                <DatePicker placeholder="请选择质检日期" style={{ width: '100%' }} />
               )}
             </Form.Item>
           </Col>
-          <Col span={8} key='order_creater'>
-            <Form.Item label='业务员姓名' {...formItemLayout}>
-              {getFieldDecorator('order_creater', {
+          <Col span={8} key='result'>
+            <Form.Item label='质检结果购员' {...formItemLayout}>
+              {getFieldDecorator('result', {
                 rules: [{
                   required: true,
-                  message: '请输入业务员',
+                  message: '请输入质检结果!',
                 }],
               })(
-                <Input placeholder="业务员姓名" />
+                <Input placeholder="合格/不合格原因" />
               )}
             </Form.Item>
           </Col>
         </Row>
+        <Row gutter={24}>
+          <Col span={24} key='list_date'>
+            <List
+              className={style.listStyle}
+              bordered
+              dataSource={listData}
+              renderItem={item => (<List.Item>{item}</List.Item>)}
+            />
+          </Col>
+        </Row>
         <Row>
           <Col span={24} style={{ textAlign: 'right' }}>
-            <Button type="primary" htmlType="submit">查找</Button>
+            <Button type="primary" htmlType="submit">提交</Button>
             <Button style={{ marginLeft: 8 }} onClick={this.handleReset}>
-              清空
-              </Button>
+              退回
+            </Button>
           </Col>
         </Row>
       </div>
