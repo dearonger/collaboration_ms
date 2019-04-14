@@ -3,6 +3,8 @@ import { Layout } from 'antd';
 
 import LoginForm from '../LoginForm/LoginForm';
 import style from './Login.less';
+import logo from '../../assets/logo.png';
+
 
 const { Header, Footer, Content } = Layout;
 
@@ -17,6 +19,7 @@ class Login extends React.Component {
           <Layout className={style.main}>
             <Header>Header</Header>
             <Content>
+              <img src={logo} className={style.logo}></img>
               <div className={style.loginForm}>
                 <LoginForm />
               </div>
