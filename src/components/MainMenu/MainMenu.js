@@ -16,7 +16,7 @@ class MainMenu extends React.Component {
           </Menu.Item>
         )
       });
-
+     
       return (
         <Menu style={{ paddingTop: '10px'}}
           mode="inline"
