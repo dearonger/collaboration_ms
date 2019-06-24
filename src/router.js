@@ -9,7 +9,10 @@ import PurchaseStep from 'routes/PurchaseStep/PurchaseStep';
 import ProductionStep from 'routes/ProductionStep/ProductionStep';
 import TransportStep from 'routes/TransportStep/TransportStep';
 import Question from 'routes/Question/Question';
-// import Login from 'components/Login/Login';
+import Dispatch from 'routes/Dispatch/Dispatch';
+import DispatchShow from 'routes/DispatchShow/DispatchShow';
+import User from 'routes/User/User';
+
 
 function RouterConfig({ history }) {
   return (
@@ -24,11 +27,14 @@ function RouterConfig({ history }) {
           <Route path="/production" exact component={ProductionStep} />
           <Route path="/transport" exact component={TransportStep} />
           <Route path="/question" exact component={Question} />
+          <Route path="/dispatch" exact component={Dispatch} />
+          <Route path="/dispatchshow" exact component={DispatchShow} />
+          <Route path="/user" exact component={User} />
           <Redirect to="/create" exact component={CreateOrder} />
         </Switch>
       </Main>
     </Router>
-    
+
   );
 }
 
