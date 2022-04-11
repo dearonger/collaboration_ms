@@ -12,7 +12,7 @@ class Main extends React.Component {
     return (
       <Layout>
         <Header className="header">
-          <div className={style.logo} />
+          {/* <div className={style.logo} /> */}
         </Header>
         <Layout>
           <Sider width={256} style={{ background: '#fff' }}>

@@ -1,0 +1,273 @@
+@import '~antd/lib/style/themes/default.less';
+
+
+.card {
+    margin-bottom: 24px;
+}
+
+
+.tableList {
+    .tableListOperator {
+        margin-bottom: 16px;
+        button {
+            margin-right: 8px;
+        }
+    }
+}
+
+
+.tableListForm {
+    :global {
+        .ant-form-item {
+            margin-bottom: 24px;
+            margin-right: 0;
+            display: flex;
+            > .ant-form-item-label {
+                //width: auto;
+                width: 80px;
+                line-height: 32px;
+                padding-right: 8px;
+            }
+            .ant-form-item-control {
+                line-height: 32px;
+            }
+        }
+        .ant-form-item-control-wrapper {
+            flex: 1;
+        }
+    }
+    .submitButtons {
+        white-space: nowrap;
+        margin-bottom: 24px;
+    }
+}
+
+.tableForm {
+    :global {
+        .ant-form-item {
+            margin-bottom: 24px;
+            margin-right: 0;
+            display: flex;
+            > .ant-form-item-label {
+                line-height: 32px;
+                padding-right: 8px;
+            }
+            .ant-form-item-control {
+                line-height: 32px;
+            }
+        }
+        .ant-form-item-control-wrapper {
+            flex: 1;
+        }
+    }
+    .submitButtons {
+        white-space: nowrap;
+        margin-bottom: 24px;
+    }
+}
+
+.modalForm {
+    :global {
+        .ant-form-item {
+            margin-bottom: 12px;
+            margin-right: 0;
+            display: flex;
+            > .ant-form-item-label {
+                line-height: 32px;
+                padding-right: 8px;
+            }
+            .ant-form-item-control {
+                line-height: 32px;
+            }
+        }
+        .ant-form-item-control-wrapper {
+            flex: 1;
+        }
+    }
+    .submitButtons {
+        white-space: nowrap;
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: @screen-lg) {
+    .tableListForm :global(.ant-form-item) {
+        margin-right: 24px;
+    }
+}
+
+@media screen and (max-width: @screen-md) {
+    .tableListForm :global(.ant-form-item) {
+        margin-right: 8px;
+    }
+}
+
+.invalidIcon {
+    padding-right: 15px;
+    color:#888;
+    width: 30px
+}
+
+.noSupportIcon {
+    padding-right: 15px;
+    display:  inline-block;
+    width: 30px;
+    text-align:center;
+}
+
+.validIcon {
+    padding-right: 15px;
+    width: 30px
+}
+
+.optional {
+    color: rgba(0, 0, 0, 0.45);
+    font-style: normal;
+}
+
+.salesCard{
+    border: 1px solid #e8e8e8;
+}
+
+.customMargin{
+    margin-bottom: 12px;
+}
+
+.itemMargin {
+    margin: 12px 12px 12px 24px;
+}
+
+.rankingTitle {
+    display: inline;
+    color: #1890ff;
+    height: 32px;
+    line-height: 32px;
+}
+
+.salesRank{
+    :global{
+        .ant-btn-danger {
+            color: #fff;
+            background-color: #f5222d;
+            border-color: #f5222d;
+        }
+    };
+    :global{
+        .ant-form-item-control {
+            line-height:32px;
+        }
+    }
+}
+
+.radioGroup {
+    margin-left: 10px;
+    :global {
+        .ant-radio-wrapper {
+            padding:0px 20px;
+        }
+    }
+}
+
+.rankingList {
+    margin: 0px 35px 10px 25px;
+    padding: 0;
+    list-style: none;
+    li {
+        // margin-top: 10px;
+        >span {
+            color: @text-color;
+            font-size: 14px;
+            line-height: 32px;
+        }
+        >span:first-child {
+            // background-color: @background-color-base;
+            border-radius: 20px;
+            display: inline-block;
+            //font-size: 12px;
+            //font-weight: 600;
+            margin-right: 24px;
+            height: 32px;
+            line-height: 32px;
+            width: 100px;
+            text-align: right;
+        }
+        >span.active {
+            //background-color: @primary-color;
+            background-color: #314659;
+            color: #fff;
+        }
+        >span:last-child {
+            float: right;
+            margin-right:20px
+        }
+    }
+}
+
+.extNumber{
+    tr{
+        cursor: pointer;
+    }
+}
+
+.clickedRow {
+    background-color:#e6f7ff;
+}
+
+.dashboardCall {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin:20px 0px;
+        >span {
+            color: @text-color;
+            font-size: 14px;
+            line-height: 32px;
+        }
+        >span:first-child {
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 24px;
+            height: 32px;
+            line-height: 32px;
+            padding: 0px 10px;
+            color: white;
+        }
+        >span:nth-child(2) {
+            float: right;
+            text-align: right;
+            margin-right:20px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+}
+
+.spanMaxConcurrent {
+    background: rgb(24, 144, 255);
+    // height: 32px;
+    line-height: 32px;
+    font-size: 24px;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-a {
+    background: rgb(24, 144, 255);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.divFlexSty {
+    display: flex;
+    justify-content: center;
+}
+
+.transferTips{
+    color: #999999;
+    font-size: 11px;
+    margin-left: 10px;
+}

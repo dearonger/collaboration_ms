@@ -16,6 +16,9 @@ import Login from 'components/Login/Login';
 
 import GraphChart from 'routes/ECharts/GraphChart';
 import User from 'routes/UserManage/User';
+import Entity from 'routes/Entity/Entity';
+import Relation from 'routes/Relation/Relation';
+import DataBio from './routes/DataBio/DataBio';
 
 
 function RouterConfig({ history }) {
@@ -36,10 +39,10 @@ function RouterConfig({ history }) {
           <Route path="/user" exact component={User} />
           <Redirect to="/create" exact component={CreateOrder} /> */}
 
-          <Route path="/objBuilder" exact component={GraphChart} />
-          <Route path="/relBuilder" exact component={GraphChart} />
+          <Route path="/objBuilder" exact component={Entity} />
+          <Route path="/relBuilder" exact component={Relation} />
           <Route path="/genera" exact component={GraphChart} />
-          <Route path="/data" exact component={DispatchShow} />
+          <Route path="/data" exact component={DataBio} />
           <Route path="/user" exact component={User} />
           <Redirect to="/graphbuilder" exact component={CreateOrder} />
         </Switch>

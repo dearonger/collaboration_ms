@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Row, Col, Input, Button, DatePicker, Table, Popconfirm, Badge, Divider, Icon } from 'antd';
 
+import CreateUser from './CreateUser';
 import style from './User.less';
 
 const { Column } = Table;
@@ -14,6 +15,7 @@ class User extends React.Component {
       role: '群组管理员',
       phone: '13900000000',
       canlog: '1',
+      email: 'student@edu.com'
     }, {
       key: '2',
       logID: 'test-admin',
@@ -113,6 +115,7 @@ class User extends React.Component {
       canlog: '1',
     }],
     count: 13,
+    visibleFlag: '',
   };
 
   handleSearch = (e) => {
@@ -131,8 +134,17 @@ class User extends React.Component {
     this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
   }
 
+  handleModalVisible = (flag, record) => {
+    this.setState({
+      visibleFlag: flag,
+      record,
+    });
+
+    console.log("record", record)
+  }
+
   render() {
-    const { dataSource } = this.state;
+    const { dataSource, visibleFlag, record, } = this.state;
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: {
@@ -202,7 +214,8 @@ class User extends React.Component {
         </Row>
         <div>
           <Button className={style.submitButton}
-            style={{ marginLeft: 10 }} type="primary" htmlType="submit">
+            style={{ marginLeft: 10 }} type="primary" htmlType="submit"
+            onClick={() => this.handleModalVisible('add')} >
             <Icon type="plus" />
             新增
           </Button>
@@ -213,13 +226,7 @@ class User extends React.Component {
         </div>
         <div className={style.searchContent}>
           <Table dataSource={dataSource} bordered rowSelection={rowSelection} >
-            key: '13',
-            logID: 'dw-admin',
-            name: '管理员',
-            group: '群组一',
-            role: '群组管理员',
-            phone: '13900000000',
-            canlog: '1',
+
             <Column
               title="序号"
               dataIndex="key"
@@ -269,16 +276,25 @@ class User extends React.Component {
                 dataSource.length >= 1
                   ? (
                     <>
-                      <a href="javascript:;">编辑</a>
+                      <a href="javascript:;" onClick={() => this.handleModalVisible('edit', record)}>编辑</a>
                       <Divider type='vertical' />
                       <Popconfirm title="确定删除？" onConfirm={() => this.handleDelete(record.key)}>
                         <a href="javascript:;">删除</a>
+                      </Popconfirm>
+                      <Divider type='vertical' />
+                      <Popconfirm title="确定重置密码？" onConfirm={() => this.handleDelete(record.key)}>
+                        <a href="javascript:;">重置密码</a>
                       </Popconfirm>
                     </>
                   ) : null
               )}
             />
           </Table>
+          <CreateUser
+            modalVisible={visibleFlag === 'add' || visibleFlag === 'edit'}
+            handleModalVisible={this.handleModalVisible}
+            record={record}
+          />
         </div>
       </Form>
     );

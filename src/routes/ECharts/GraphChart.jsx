@@ -13,67 +13,61 @@ class GraphChart extends React.Component {
     "type": "force",
     "categories": [
       {
-        "name": "HTMLElement",
+        "name": "PROL",
         "keyword": {},
-        "base": "HTMLElement"
+
       },
       {
-        "name": "WebGL",
+        "name": "FUN",
         "keyword": {},
-        "base": "WebGLRenderingContext"
+
       },
       {
-        "name": "SVG",
+        "name": "OPT",
         "keyword": {},
-        "base": "SVGElement"
+
       },
-      {
-        "name": "CSS",
-        "keyword": {},
-        "base": "CSSRule"
-      }
     ],
     "nodes": [
       {
-        "name": "A",
+        "name": "C语言",
         "value": 1,
         "category": 0,
         "size": 100,
-        "symbolSize": 40,
+        "symbolSize": 80,
       },
       {
-        "name": "B",
-        "value": 10,
+        "name": "函数",
+        "value": '函数',
         "category": 1,
-        "symbolSize": 40,
+        "symbolSize": 60,
       },
       {
-        "name": "C",
-        "value": 1,
+        "name": "操作符",
+        "value": '操作符',
         "category": 2,
-        "symbolSize": 40,
+        "symbolSize": 60,
       },
-      {
-        "name": "D",
-        "value": 10,
-        "category": 3,
-        "symbolSize": 40,
-      }
     ],
     "links": [
       {
         "source": 0,
-        "target": 1
+        "target": 1,
+        "name": '包括'
       },
       {
         "source": 0,
-        "target": 2
+        "target": 2,
+        "name": '包括'
       },
-      {
-        "source": 0,
-        "target": 3
-      }
-    ]
+
+    ],
+
+    lineStyle: {
+      opacity: 0.9,
+      width: 2,
+      curveness: 0
+    }
   };
 
   chartInit = () => {
@@ -87,16 +81,29 @@ class GraphChart extends React.Component {
     });
     graphChart.setOption({
       legend: {
-        data: ['HTMLElement', 'WebGL', 'SVG', 'CSS', 'Other']
+        data: ['PROL', 'FUN', 'OPT']
       },
       series: [
         {
           type: 'graph',
           layout: 'force',
           animation: false,
+          roam: true,
+          edgeSymbol: ['circle', 'arrow'],
+          edgeSymbolSize: [4, 10],
+          edgeLabel: {
+            normal: {
+              show: true,
+              formatter: function (x) {
+                return x.data.name;
+              }
+            }
+          },
           label: {
-            position: 'right',
-            formatter: '{b}'
+            normal: {
+              show: true,
+              textStyle: {}
+            }
           },
           draggable: true,
           data: this.data.nodes.map(function (node, idx) {
@@ -106,7 +113,7 @@ class GraphChart extends React.Component {
           categories: this.data.categories,
           force: {
             edgeLength: 150,
-            repulsion: 300,
+            repulsion: 800,
             gravity: 0.1
           },
           edges: this.data.links

@@ -11,6 +11,7 @@
     "dva": "^2.4.1",
     "echarts": "^5.3.2",
     "react": "^16.2.0",
+    "react-color": "^2.19.3",
     "react-dom": "^16.2.0",
     "react-highlight-words": "^0.16.0"
   },
