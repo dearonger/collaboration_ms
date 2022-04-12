@@ -34,7 +34,11 @@ const data = [{
   orderID: 'A19-1-17',
   clientName: '上海菲姿服饰有限公司',
   importent: '0.8',
+<<<<<<< HEAD
   deliveDate: '2019-02-05',
+=======
+  deliveDate: '2019-02-15',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 6 4 7 8 9 10 11 12',
   color: '303C',
 }, {
@@ -42,7 +46,11 @@ const data = [{
   orderID: 'A19-1-50',
   clientName: '上海西丝罗服装有限公司',
   importent: '0.2',
+<<<<<<< HEAD
   deliveDate: '2019-03-11',
+=======
+  deliveDate: '2019-02-11',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 2 3 5 4 7 8 9 10 11 12',
   color: '358C',
 }, {
@@ -66,7 +74,11 @@ const data = [{
   orderID: 'C19-1-10',
   clientName: '常州廣田服装有限公司',
   importent: '0.4',
+<<<<<<< HEAD
   deliveDate: '2019-02-09',
+=======
+  deliveDate: '2019-02-15',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 4 7 8 9 10 11 12',
   color: '2705C',
 }, {
@@ -87,26 +99,47 @@ const data = [{
   color: '3965C',
 }, {
   key: '8',
+<<<<<<< HEAD
   orderID: 'C19-2-18',
   clientName: '阳光国际有限公司',
   importent: '0.7',
   deliveDate: '2019-03-13',
+=======
+  orderID: 'C19-1-186',
+  clientName: '阳光国际有限公司',
+  importent: '0.7',
+  deliveDate: '2019-02-13',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 2 3 5 4 7 8 9 10 11 12',
   color: '3995C',
 }, {
   key: '9',
+<<<<<<< HEAD
   orderID: 'A19-2-18',
   clientName: '上海菲姿服饰有限公司',
   importent: '0.8',
   deliveDate: '2019-03-18',
+=======
+  orderID: 'A19-2-1',
+  clientName: '上海西丝罗服装有限公司',
+  importent: '0.2',
+  deliveDate: '2019-03-15',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 4 6 7 8 9 10 11 12',
   color: '3035C',
 }, {
   key: '10',
+<<<<<<< HEAD
   orderID: 'A19-3-20',
   clientName: '上海菲姿服饰有限公司',
   importent: '0.8',
   deliveDate: '2019-04-08',
+=======
+  orderID: 'A19-2-108',
+  clientName: '深圳富安娜家居用品股份有限公司',
+  importent: '0.8',
+  deliveDate: '2019-03-01',
+>>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
   processOrder: '1 6 2 3 5 4 7 8 9 10 11 12',
   color: '315C',
 }, {
