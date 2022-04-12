@@ -15,66 +15,40 @@ class Search extends React.Component {
         clientName: '上海菲姿服饰有限公司',
         goods: '查看',
         signDate: '2019-01-05',
-<<<<<<< HEAD
         deliveDate: '2019-02-05',
         status: '原料采购',
-=======
-        deliveDate: '2019-02-15',
-        status: '车间打样',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '2',
         orderID: 'A19-1-50',
         clientName: '上海西丝罗服装有限公司',
         goods: '查看',
         signDate: '2019-01-11',
-<<<<<<< HEAD
         deliveDate: '2019-03-11',
-=======
-        deliveDate: '2019-02-11',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
         status: '库存查询',
       }, {
         key: '3',
         orderID: 'A19-1-86',
         clientName: '华利达服装',
         goods: '查看',
-<<<<<<< HEAD
-        signDate: '2019-01-16',
-        deliveDate: '2019-02-28',
-        status: '订单生产',
-=======
         signDate: '2019-01-12',
         deliveDate: '2019-02-28',
         status: '染色',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '4',
         orderID: 'A19-1-118',
         clientName: '宁波乐卡克服饰有限公司',
         goods: '查看',
-<<<<<<< HEAD
-        BlacksignDate: '2019-01-28',
-        deliveDate: '2019-02-15',
-        status: '原料质检',
-=======
         signDate: '2019-01-12',
         deliveDate: '2019-02-15',
         status: '车间打样',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '5',
         orderID: 'C19-1-10',
         clientName: '常州廣田服装有限公司',
         goods: '查看',
         signDate: '2019-01-09',
-<<<<<<< HEAD
-        deliveDate: '2019-02-09',
-        status: '订单生产',
-=======
         deliveDate: '2019-02-15',
         status: '前处理',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '6',
         orderID: 'C19-1-18',
@@ -82,17 +56,12 @@ class Search extends React.Component {
         goods: '查看',
         signDate: '2019-01-10',
         deliveDate: '2019-02-20',
-<<<<<<< HEAD
         status: '订单生产',
-=======
-        status: '原料供应',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '7',
         orderID: 'C19-1-105',
         clientName: '北京五木服装有限公司',
         goods: '查看',
-<<<<<<< HEAD
         signDate: '2019-01-25',
         deliveDate: '2019-02-25',
         status: '原料供应',
@@ -120,35 +89,6 @@ class Search extends React.Component {
         signDate: 'Sidney No. 1 Lake Park',
         deliveDate: '',
         status: 1,
-=======
-        signDate: '2019-01-14',
-        deliveDate: '2019-02-25',
-        status: '库存查询',
-      }, {
-        key: '8',
-        orderID: 'C19-1-186',
-        clientName: '阳光国际有限公司',
-        goods: '查看',
-        signDate: '2019-01-14',
-        deliveDate: '2019-02-15',
-        status: '原料采购',
-      }, {
-        key: '9',
-        orderID: 'A19-2-1',
-        clientName: '上海西丝罗服装有限公司',
-        goods: '查看',
-        signDate: '2019-02-15',
-        deliveDate: '2019-03-15',
-        status: '未处理',
-      }, {
-        key: '10',
-        orderID: 'A19-2-108',
-        clientName: '深圳富安娜家居用品股份有限公司',
-        goods: '查看',
-        signDate: '2019-02-18',
-        deliveDate: '2019-03-01',
-        status: '未处理',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '11',
         orderID: 'C19-2-188',
@@ -156,11 +96,7 @@ class Search extends React.Component {
         goods: '查看',
         signDate: 'Sidney No. 1 Lake Park',
         deliveDate: '',
-<<<<<<< HEAD
         status: 1,
-=======
-        status: '未处理',
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
       }, {
         key: '12',
         orderID: 'C19-2-188',

@@ -13,17 +13,10 @@ class Main extends React.Component {
     return (
       <Layout>
         <Header className="header">
-<<<<<<< HEAD
           {/* <div className={style.logo} /> */}
         </Header>
         <Layout>
           <Sider width={256} style={{ background: '#fff' }}>
-=======
-          <img src={imgURL } className={style.logo}/>
-        </Header>
-        <Layout>
-          <Sider width={256} style={{ background: '#001629' }}>
->>>>>>> 05f8e40114e0b236344b17333d073b2f7f0aa199
             <MainMenu />
           </Sider>
           <Layout style={{ padding: '0 16px' }}>
