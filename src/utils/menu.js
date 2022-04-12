@@ -35,9 +35,9 @@
 // ]
 
 const menu = [{
-  index: 'graphbuilder',
-  name: '图谱构建',
-  icon: 'dot-chart',
+  index: 'data',
+  name: '数据处理',
+  icon: 'edit',
   children: [{
       index: 'objBuilder',
       name: '实体编辑',
@@ -49,18 +49,32 @@ const menu = [{
       path: '/relBuilder',
     },
     {
-      index: 'genera',
-      name: '图谱生成',
-      path: '/genera',
+      index: 'dataBio',
+      name: '数据标注',
+      path: '/dataBio',
     },
-  ],
+  ]
 }, {
-  index: 'data',
-  name: '数据处理',
-  icon: 'edit'
+  index: 'graphbuilder',
+  name: '图谱构建',
+  icon: 'dot-chart',
+  children: [{
+    index: 'dataBuilder',
+    name: '抽取构建',
+    path: '/dataBuilder',
+  }, {
+    index: 'genera',
+    name: '图谱生成',
+    path: '/genera',
+  }, ],
 }, {
-  index: 'user',
-  name: '用户管理',
-  icon: 'solution'
-}, ]
+  index: 'manage',
+  name: '系统管理',
+  icon: 'solution',
+  children: [{
+    index: 'user',
+    name: '用户管理',
+    path: '/user'
+  }, ],
+}]
 export default menu;

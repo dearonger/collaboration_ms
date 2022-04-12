@@ -19,6 +19,7 @@ import User from 'routes/UserManage/User';
 import Entity from 'routes/Entity/Entity';
 import Relation from 'routes/Relation/Relation';
 import DataBio from './routes/DataBio/DataBio';
+import DataBuilder from './routes/DataBuilder/DataBuilder';
 
 
 function RouterConfig({ history }) {
@@ -42,9 +43,10 @@ function RouterConfig({ history }) {
           <Route path="/objBuilder" exact component={Entity} />
           <Route path="/relBuilder" exact component={Relation} />
           <Route path="/genera" exact component={GraphChart} />
-          <Route path="/data" exact component={DataBio} />
+          <Route path="/dataBio" exact component={DataBio} />
+          <Route path="/dataBuilder" exact component={DataBuilder} />
           <Route path="/user" exact component={User} />
-          <Redirect to="/graphbuilder" exact component={CreateOrder} />
+          <Redirect to="/objBuilder" exact component={Entity} />
         </Switch>
       </Main>
     </Router>
