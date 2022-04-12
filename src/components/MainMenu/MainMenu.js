@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'dva/router';
 
+import menu from '../../utils/menu';
 import style from './MainMenu.less';
 
 const { SubMenu } = Menu;
