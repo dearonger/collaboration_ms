@@ -1,119 +1,47 @@
 import React from 'react';
-import { Form, Row, Col, Input, Button, DatePicker, Table, Popconfirm, Badge, Divider, Icon } from 'antd';
+import { Form, Row, Col, Input, Button, DatePicker, Table, Card, Tag, Divider, Icon } from 'antd';
 
 import style from '../UserManage/User.less';
 
 const { Column } = Table;
+const { TextArea } = Input;
 class User extends React.Component {
   state = {
     dataSource: [{
-      key: '1',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-      email: 'student@edu.com'
+      id: '1',
+      name: '测试图谱',
+      desc: '',
+      num: '1',
+      success: '0',
+      edit: '1',
+      in: '0',
+      author: 'wxx',
+      status: 'edit',
+      time: '10分钟前'
     }, {
-      key: '2',
-      logID: 'test-admin',
-      name: '测试管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
+      id: '2',
+      name: '测试图谱2',
+      desc: '',
+      num: '1',
+      success: '1',
+      edit: '0',
+      in: '0',
+      author: 'wxx',
+      status: 'success',
+      time: '35分钟前'
     }, {
-      key: '3',
-      logID: 'test-user',
-      name: '测试用户',
-      group: '群组一',
-      role: '群组成员',
-      phone: '13900000000',
-      canlog: '0',
-    }, {
-      key: '4',
-      logID: 'student1',
-      name: '学生1',
-      group: '群组二',
-      role: '群组成员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '5',
-      logID: 'student2',
-      name: '学生2',
-      group: '群组二',
-      role: '群组成员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '6',
-      logID: 'student3',
-      name: '学生3',
-      group: '群组二',
-      role: '群组成员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '7',
-      logID: 'teacher1',
-      name: '教师',
-      group: '群组二',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '8',
-      logID: 'teacher2',
-      name: '测试教师',
-      group: '群组二',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '0',
-    }, {
-      key: '9',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '10',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '11',
-      orderID: 'C19-2-188',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '12',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }, {
-      key: '13',
-      logID: 'dw-admin',
-      name: '管理员',
-      group: '群组一',
-      role: '群组管理员',
-      phone: '13900000000',
-      canlog: '1',
-    }],
-    count: 13,
+      id: '3',
+      name: 'C语言图谱',
+      desc: '',
+      num: '1',
+      success: '0',
+      edit: '0',
+      in: '0',
+      author: 'wxx',
+      status: 'notIn',
+      time: '10分钟前'
+    },],
+    count: 2,
     visibleFlag: '',
   };
 
@@ -161,155 +89,240 @@ class User extends React.Component {
       onChange: () => { },
     };
 
+    const addList = [
+      {
+        id: '1',
+        file: '测试文档',
+        desc: '',
+        src: '测试组',
+        owner: 'wxx',
+      }, {
+        id: '2',
+        file: '测试文档',
+        desc: '',
+        src: '测试组',
+        owner: 'wangxx',
+      }, {
+        id: '3',
+        file: '测试文档',
+        desc: '',
+        src: '测试组',
+        owner: 'admin',
+      }
+    ];
+    const addColumns = [
+      {
+        title: 'ID',
+        dataIndex: 'id',
+        key: 'id',
+      },
+      {
+        title: '文件名',
+        dataIndex: 'file',
+        key: 'file',
+      },
+      {
+        title: '资源组',
+        dataIndex: 'src',
+        key: 'src',
+      },
+      {
+        title: '上传者',
+        dataIndex: 'owner',
+        key: 'owner',
+      },
+    ]
+
     return (
       <Form className={style.formStyle} onSubmit={this.handleSearch} >
-        <Row gutter={24}>
-          <Col span={6} key="login_id">
-            <Form.Item label="登录账号" {...formItemLayout}>
-              {getFieldDecorator('login_id', {
-                rules: [
-                  {
-                    required: false,
-                    message: '请输入登录账号',
-                  },
-                ],
-              })(<Input placeholder="请输入" />)}
-            </Form.Item>
-          </Col>
-          <Col span={6} key="sign_date">
-            <Form.Item label="用户名" {...formItemLayout}>
-              {getFieldDecorator('clientName', {
-                rules: [
-                  {
-                    required: false,
-                    message: '请输入用户名称',
-                  },
-                ],
-              })(<Input placeholder="请输入" />)}
-            </Form.Item>
-          </Col>
-          <Col span={6} key="clientName">
-            <Form.Item label="所属组" {...formItemLayout}>
-              {getFieldDecorator('clientName', {
-                rules: [
-                  {
-                    required: false,
-                    message: '请输入所属组',
-                  },
-                ],
-              })(<Input placeholder="请输入" />)}
-            </Form.Item>
-          </Col>
-          <Col span={6}>
-            <Form.Item>
-              <Button className={style.submitButton} type="primary" htmlType="submit">
-                查找
+        {visibleFlag !== 'add' ?
+          <>
+            <Row gutter={24}>
+              <Col span={6} key="login_id">
+                <Form.Item label="任务名称" {...formItemLayout}>
+                  {getFieldDecorator('login_id', {
+                    rules: [
+                      {
+                        required: false,
+                        message: '请输入任务名称',
+                      },
+                    ],
+                  })(<Input placeholder="请输入" />)}
+                </Form.Item>
+              </Col>
+              <Col span={6} offset={12}>
+                <Form.Item>
+                  <Button className={style.submitButton} type="primary" htmlType="submit">
+                    查找
+                  </Button>
+                  <Button className={style.submitButton} onClick={this.handleReset}>
+                    清空
+                  </Button>
+                </Form.Item>
+              </Col>
+            </Row>
+            <div>
+              <Button className={style.submitButton}
+                style={{ marginLeft: 10 }} type="primary" htmlType="submit"
+                onClick={() => this.handleModalVisible('add')} >
+                <Icon type="plus" />
+                新增
               </Button>
               <Button className={style.submitButton} onClick={this.handleReset}>
-                清空
+                <Icon type="import" />
+                录入
               </Button>
-            </Form.Item>
-          </Col>
-        </Row>
-        <div>
-          <Button className={style.submitButton}
-            style={{ marginLeft: 10 }} type="primary" htmlType="submit"
-            onClick={() => this.handleModalVisible('add')} >
-            <Icon type="plus" />
-            新增
-          </Button>
-          <Button className={style.submitButton} onClick={this.handleReset}>
-            <Icon type="export" />
-            导出
-          </Button>
-        </div>
-        <div className={style.searchContent}>
-          <Table dataSource={dataSource} bordered rowSelection={rowSelection} >
-
-            <Column
-              title="ID"
-              dataIndex="id"
-              key="id"
-            />
-            <Column
-              title="任务名称"
-              dataIndex="name"
-              key="name"
-            />
-            <Column
-              title="任务描述"
-              dataIndex="desc"
-              key="desc"
-            />
-            <Column
-              title="文件数量"
-              dataIndex="num"
-              key="num"
-            />
-            <Column
-              title="抽取成功"
-              dataIndex="success"
-              key="success"
-            />
-            <Column
-              title="编辑"
-              dataIndex="edit"
-              key="edit"
-            />
-            <Column
-              title="录入"
-              dataIndex="in"
-              key="in"
-            />
-            <Column
-              title="创建人"
-              dataIndex="author"
-              key="author"
-            />
-            <Column
-              title="状态"
-              dataIndex="canlog"
-              key="canlog"
-              render={(text, record) => {
-                return (
-                  <>
-                    <Badge status={record && record.canlog === '1' ? 'success' : 'error'} />
-                    <span style={{ marginLeft: 8 }}>{record && record.canlog === '1' ? '有效' : '失效'}</span>
-                  </>)
-              }}
-            />
-            <Column
-              title="更新时间"
-              dataIndex="time"
-              key="time"
-            />
-            <Column
-              title="操作"
-              key="action"
-              render={(text, record) => (
-                dataSource.length >= 1
-                  ? (
-                    <>
-                      <a href="javascript:;" onClick={() => this.handleModalVisible('edit', record)}>编辑</a>
-                      <Divider type='vertical' />
-                      <Popconfirm title="确定删除？" onConfirm={() => this.handleDelete(record.key)}>
-                        <a href="javascript:;">删除</a>
-                      </Popconfirm>
-                      <Divider type='vertical' />
-                      <Popconfirm title="确定重置密码？" onConfirm={() => this.handleDelete(record.key)}>
-                        <a href="javascript:;">重置密码</a>
-                      </Popconfirm>
-                    </>
-                  ) : null
-              )}
-            />
-          </Table>
-          {/* <CreateUser
-            modalVisible={visibleFlag === 'add' || visibleFlag === 'edit'}
-            handleModalVisible={this.handleModalVisible}
-            record={record}
-          /> */}
-        </div>
+            </div>
+            <div className={style.searchContent}>
+              <Table dataSource={dataSource} bordered rowSelection={rowSelection} >
+                <Column
+                  title="ID"
+                  dataIndex="id"
+                  key="id"
+                />
+                <Column
+                  title="任务名称"
+                  dataIndex="name"
+                  key="name"
+                />
+                <Column
+                  title="任务描述"
+                  dataIndex="desc"
+                  key="desc"
+                />
+                <Column
+                  title="文件数量"
+                  dataIndex="num"
+                  key="num"
+                />
+                <Column
+                  title="抽取成功"
+                  dataIndex="success"
+                  key="success"
+                />
+                <Column
+                  title="编辑"
+                  dataIndex="edit"
+                  key="edit"
+                />
+                <Column
+                  title="录入"
+                  dataIndex="in"
+                  key="in"
+                />
+                <Column
+                  title="创建人"
+                  dataIndex="author"
+                  key="author"
+                />
+                <Column
+                  title="状态"
+                  dataIndex="status"
+                  key="status"
+                  render={item => {
+                    return (<>
+                      {item === 'success'
+                        ? <Tag color="#87d068">抽取成功</Tag> : item === 'notIn' ?
+                          <Tag color="#ff6969">待抽取</Tag> : <Tag color="#108ee9">抽取中</Tag>}
+                    </>)
+                  }}
+                />
+                <Column
+                  title="更新时间"
+                  dataIndex="time"
+                  key="time"
+                />
+                <Column
+                  title="操作"
+                  key="action"
+                  render={(text, record) => (
+                    dataSource.length >= 1
+                      ? (
+                        <>
+                          <a href="javascript:;" onClick={() => this.handleModalVisible('edit', record)}>查看</a>
+                          <Divider type='vertical' />
+                          <a href="javascript:;">更多</a>
+                        </>
+                      ) : null
+                  )}
+                />
+              </Table>
+            </div>
+          </> :
+          <div>
+            <span style={{ fontSize: 17, fontWeight: 500, color: 'rgba(0, 0, 0, 0.85)', cursor: 'pointer' }} onClick={() => this.handleModalVisible('normal', null)}>
+              <Icon type="left" style={{ marginRight: 8 }} />
+            </span>
+            <Card title="基本信息" bordered={false} className={style.addInfoCard}>
+              <Row gutter={24}>
+                <Col span={10} key="login_id">
+                  <Form.Item label="任务名称" {...formItemLayout}>
+                    {getFieldDecorator('login_id', {
+                      rules: [
+                        {
+                          required: true,
+                          message: '请输入任务名称',
+                        },
+                      ],
+                    })(<Input placeholder="请输入" />)}
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row gutter={24}>
+                <Col span={10} key="login_id">
+                  <Form.Item label="任务描述" {...formItemLayout}>
+                    {getFieldDecorator('login_id', {
+                      rules: [
+                        {
+                          required: false,
+                          message: '请输入任务描述',
+                        },
+                      ],
+                    })(<TextArea placeholder="请输入" />)}
+                  </Form.Item>
+                </Col>
+              </Row>
+            </Card>
+            <Card title="文件配置" bordered={false} className={style.addInfoCard}>
+              <Row gutter={24}>
+                <Col span={6} key="login_id">
+                  <Form.Item label="文件名称" {...formItemLayout}>
+                    {getFieldDecorator('login_id', {
+                      rules: [
+                        {
+                          required: true,
+                          message: '请输入文件名称',
+                        },
+                      ],
+                    })(<Input placeholder="请输入" />)}
+                  </Form.Item>
+                </Col>
+                <Table
+                  size="middle"
+                  rowKey={record => record.id}
+                  dataSource={addList}
+                  columns={addColumns}
+                  rowSelection={rowSelection}
+                // className={style.extNumber}
+                />
+              </Row>
+            </Card>
+            <div>
+              <Button type="primary"
+                style={{ marginRight: 16 }}
+                onClick={() => this.handleModalVisible('normal', null)}
+              >
+                确定
+              </Button>
+              <Button
+                style={{ marginRight: 16 }}
+                onClick={() => this.handleModalVisible('normal', null)}
+              >
+                取消
+              </Button>
+            </div>
+          </div>
+        }
       </Form>
     );
   }

@@ -40,6 +40,7 @@ function RouterConfig({ history }) {
           <Route path="/user" exact component={User} />
           <Redirect to="/create" exact component={CreateOrder} /> */}
 
+          <Route path="/login" exact component={Login} />
           <Route path="/objBuilder" exact component={Entity} />
           <Route path="/relBuilder" exact component={Relation} />
           <Route path="/genera" exact component={GraphChart} />
